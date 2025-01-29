@@ -1,0 +1,25 @@
+version: 1
+jobs:
+  install-deps:
+    steps:
+      - npm install
+  build:
+    steps:
+      - npm run build
+  upload:
+    steps:
+      - echo "Uploading File to stratus"
+      - node scripts/upload-script.js
+stages:
+  - name: build
+    jobs:
+      - install-deps
+      - build
+  - name: upload
+    jobs:
+      - upload
+
+pipeline-when:
+  equal:
+    - << event.ref >>
+    - refs/heads/release
