@@ -10,7 +10,7 @@ const credential = new RefreshTokenCredential({
 
 const appOptions = {
     project_id: process.env['ZC_PROJECT_ID'],
-    project_key: process.env['ZC_PROJECT_KEY'] || '',
+    project_key: process.env['ZC_PROJECT_KEY'],
     environment: 'Development',
     credential
 };
