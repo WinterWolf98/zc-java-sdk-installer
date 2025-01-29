@@ -5,9 +5,9 @@ const { mkdir, rm } = require('fs/promises');
 const AdmZip = require('adm-zip');
 const path = require('path');
 
-let isBeta = !!process.env['ZC-BETA'];
-const version = process.env['ZC-VERSION'];
-let downloadPath = process.env['ZC-DEST-PATH'];
+let isBeta = !!process.env['ZC_BETA'];
+const version = process.env['ZC_VERSION'];
+let downloadPath = process.env['ZC_DEST_PATH'];
 const cwd = process.cwd();
 
 if(downloadPath && !path.isAbsolute(downloadPath)) {
@@ -15,7 +15,7 @@ if(downloadPath && !path.isAbsolute(downloadPath)) {
 }
 
 if(isBeta && version) {
-    console.log('The beta and version configurations cannot be used together. Use any one of the configs at a time.');
+    console.log('The ZC_BETA and ZC_VERSION configurations cannot be used together. Use any one of the configs at a time.');
     process.exit(1);
 }
 
