@@ -10,16 +10,8 @@ const version = process.env['ZC-VERSION'];
 let downloadPath = process.env['ZC-DEST-PATH'];
 const cwd = process.cwd();
 
-if(!path.isAbsolute(downloadPath)) {
+if(downloadPath && !path.isAbsolute(downloadPath)) {
     downloadPath = path.resolve(cwd, downloadPath);
-}
-
-if(args.includes('--beta')) {
-    isBeta = true;
-}
-
-if(args.includes('--version')) {
-    version = args.indexOf('--version') + 1;
 }
 
 if(isBeta && version) {
