@@ -1,0 +1,21 @@
+{
+  "name": "sdk-installer",
+  "version": "1.0.0",
+  "main": "download-sdk.js",
+  "scripts": {
+    "build": "webpack",
+    "build:watch": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "zcatalyst-sdk-node": "^3.0.0-beta.5"
+  }
+}
