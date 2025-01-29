@@ -2,6 +2,8 @@ const catalyst = require('zcatalyst-sdk-node');
 const { createReadStream } = require('fs');
 const { RefreshTokenCredential } = require('zcatalyst-sdk-node/lib/utils/credential');
 
+console.log('PROCESS_ENV: ', process.env);
+
 const credential = new RefreshTokenCredential({
     client_id: process.env['ZC_CLIENT_ID'],
     client_secret: process.env['ZC_CLIENT_SECRET'],

@@ -1,20 +1,13 @@
 version: 1
-jobs:
-  install-deps:
-    steps:
-      - npm install
-  build:
-    steps:
-      - npm run build
+jobs:      
   upload:
     steps:
+      - npm install
+      - npm run build
       - echo "Uploading File to stratus"
       - node scripts/upload-script.js
+      
 stages:
-  - name: build
-    jobs:
-      - install-deps
-      - build
   - name: upload
     jobs:
       - upload
